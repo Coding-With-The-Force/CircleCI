@@ -33,5 +33,5 @@ workflows:
   setup_scratch_org_and_run_apex_test:
     #This is the order that we are executing our jobs (use the job names from above)
     jobs:
-      - setup-scratch-org
-      - run-apex-tests
+      - setup_scratch_org
+      - run_apex_tests
