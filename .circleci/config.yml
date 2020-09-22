@@ -6,11 +6,11 @@ orbs:
   #These are the two available orbs for SFDX, top is to run SFDX commands, bottomr to run Apex Tests
   salesforce-sfdx: circleci/salesforce-sfdx@2.1.0
   salesforce-apex: circleci/salesforce-apex@1.0.1
-  
+
 # This is where we define the individul jobs
 jobs:
   #This is the name of our job (this can be named anything)
-  setup-scratch-org:
+  setup_scratch_org:
     #Salesforce utilizes the latest node docker image
     docker:
       - image: circleci/node:latest
@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run: echo "Building org"
   #This is the name of our job (this can be named anything)    
-  run-apex-tests:
+  run_apex_tests:
     docker:
       - image: circleci/node:latest
     steps:
@@ -30,7 +30,7 @@ jobs:
     version: 2.1
 
     #This is the name of the workflow (this can be named anything)    
-    setup-scratch-org_and_run-apex-test:
+    setup_scratch_org_and_run_apex_test:
       #This is the order that we are executing our jobs (use the job names from above)
       jobs:
         -setup-scratch-org
