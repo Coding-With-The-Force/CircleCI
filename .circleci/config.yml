@@ -34,4 +34,7 @@ workflows:
     #This is the order that we are executing our jobs (use the job names from above)
     jobs:
       - setup_scratch_org
-      - run_apex_tests
+      - run_apex_tests:
+          #This means that we require the scratch org job to finish before running the apex test jobs
+          requires:
+            - setup_scratch_org
